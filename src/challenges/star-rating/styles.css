@@ -1,0 +1,36 @@
+.star-rating-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.star-container {
+  font-size: 3rem;
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 2rem;
+}
+
+.star-empty {
+  cursor: pointer;
+}
+
+.star-empty::before {
+  content: '☆';
+}
+
+.star-filled {
+  cursor: pointer;
+}
+
+.star-filled::before {
+  content: '★';
+  color: rgba(255, 215, 0, 0.8);
+}
+
+.smiley-container {
+  margin-top: 2rem;
+  font-size: 3rem;
+}

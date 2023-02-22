@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.challenge-card {
+  border: solid 1px black;
+  padding: 0.5rem;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.challenge-container {
+  margin: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.link-to-challenge {
+  outline: none;
+  text-decoration: none;
+  color: black;
+}
+
+.link-to-challenge:hover {
+  background-color: rgba(128, 128, 128, 0.5);
+}
