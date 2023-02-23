@@ -4,7 +4,6 @@ const ListItem = ({ item, openModal }) => {
   const [itemContent, setItemContent] = useState(item.content);
   const [tempContent, setTempContent] = useState(item.content);
   const [openEdit, setOpenEdit] = useState(false);
-  console.log(item);
 
   const handleSubmit = (e) => {
     e.preventDefault();
