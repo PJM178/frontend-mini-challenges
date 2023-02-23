@@ -5,6 +5,7 @@ const HomePage = () => {
     <div className="challenge-container">
       <Link to='/star-rating' className="link-to-challenge"><div className="challenge-card"><h1>Star Rating</h1></div></Link>
       <Link to='/comment-box' className="link-to-challenge"><div className="challenge-card"><h1>Comment Box</h1></div></Link>
+      <Link to='/todo-list' className="link-to-challenge"><div className="challenge-card"><h1>Todo List</h1></div></Link>
     </div>
   );
 };
