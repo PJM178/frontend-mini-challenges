@@ -52,6 +52,11 @@
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+.is-blurred {
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+}
+
 .modal-content {
   background-color: white;
   border: 1px solid;
@@ -64,6 +69,7 @@
   flex-direction: column;
   overflow: auto;
   padding: 5px;
+  
 }
 
 /* w3schools modal example close button */

@@ -1,0 +1,17 @@
+/* .comment-box-body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+} */
+
+.comment-box-header {
+  display: flex;
+ justify-content: center;
+}
+
+.comment-container {
+  margin-left: 3rem;
+  margin-right: 3rem;
+  border: lightgrey solid 1px;
+  filter: drop-shadow(2px 2px 5px lightgrey);
+}
