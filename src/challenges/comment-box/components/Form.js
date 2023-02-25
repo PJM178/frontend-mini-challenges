@@ -6,13 +6,13 @@ const Form = ({ handleNewComment, id }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const comment = {
+    const newComment = {
       username: username,
       body: body,
       id: id,
       children: [],
     };
-    handleNewComment(comment);
+    handleNewComment(newComment);
     setUsername('');
     setBody('');
 

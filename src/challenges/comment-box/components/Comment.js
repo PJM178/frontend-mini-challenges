@@ -2,11 +2,22 @@ import { useState } from 'react';
 
 import Form from './Form';
 
-const Comment = ({ comment, id, setComments, setId, comments }) => {
+const Comment = ({ comment, setId, id, setComments, comments }) => {
   const [openForm, setOpenForm] = useState(false);
 
-  const handleNewComment = (comment) => {
-    setComments(...comments, comments.find(item => item.id === comment.id).children.concat(comment));
+  const handleNewComment = async (newComment) => {
+    const updateComments = (comments) => {
+      if (comments.id !== comment.id) {
+        if (comments.children.length > 0) {
+          comments.children = comments.children.map((child) => updateComments(child));
+        }
+        return comments;
+      }
+      if (comments.id === comment.id) {
+        return { ...comments, children: [ ...comments.children, newComment ] };
+      }
+    };
+    setComments([updateComments(comments[0])]);
     setId(id + 1);
   };
 
