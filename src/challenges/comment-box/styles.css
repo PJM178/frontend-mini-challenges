@@ -10,14 +10,17 @@
 }
 
 .comment-container {
-  margin-left: 3rem;
   margin-right: 3rem;
-  border: lightgrey solid 1px;
   /* filter: drop-shadow(2px 2px 5px lightgrey); */
 }
 
 .comment-content-main {
   padding: 5px;
   border: lightgrey solid 1px;
+  margin-left: 3rem;
+}
+
+.comment-content-mains {
+  /* padding: 5px; */
   margin-left: 3rem;
 }

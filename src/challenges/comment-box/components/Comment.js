@@ -19,6 +19,7 @@ const Comment = ({ comment, setId, id, setComments, comments }) => {
     };
     setComments([updateComments(comments[0])]);
     setId(id + 1);
+    setOpenForm(!openForm);
   };
 
   const nestedComments = (comment.children || []).map(comment => {
@@ -26,12 +27,17 @@ const Comment = ({ comment, setId, id, setComments, comments }) => {
   });
 
   return (
-    <div className="comment-content-main">
-      <div>{comment.body}</div>
-      <button onClick={() => setOpenForm(!openForm)}>Reply</button>
-      {openForm && <Form handleNewComment={handleNewComment} id={id} />}
-      {nestedComments}
-    </div>
+    <>
+      <div className="comment-content-main">
+        <div style={{ fontWeight: 'bold' }}>{comment.username}</div>
+        <div>{comment.body}</div>
+        <button onClick={() => setOpenForm(!openForm)}>Reply</button>
+        {openForm && <Form handleNewComment={handleNewComment} id={id} />}
+      </div>
+      {comment.children.length > 0 && <div className='comment-content-mains'>
+        {nestedComments}
+      </div>}
+    </>
   );
 };
 
