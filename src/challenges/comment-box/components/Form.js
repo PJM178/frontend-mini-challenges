@@ -19,10 +19,10 @@ const Form = ({ handleNewComment, id }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input onChange={(e) => setUsername(e.target.value)} value={username} />
-      <textarea onChange={(e) => setBody(e.target.value)} value={body} />
-      <button type='submit'>Submit</button>
+    <form onSubmit={handleSubmit} className="comment-box-form">
+      <input placeholder="Username..." className="comment-box-input" onChange={(e) => setUsername(e.target.value)} value={username} />
+      <textarea placeholder="Write comment here..." className="comment-box-textarea" onChange={(e) => setBody(e.target.value)} value={body} />
+      <button className="comment-box-button" type='submit'>Submit</button>
     </form>
   );
 };

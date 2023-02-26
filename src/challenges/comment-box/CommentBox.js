@@ -17,7 +17,7 @@ const CommentBox = () => {
       <section>
         <div className="comment-container">
           {comments.map((comment) => (
-            <Comment key={comment.id} comment={comment} setComments={setComments} setId={setId} comments={comments} id={id} />
+            comment !== undefined && <Comment key={comment.id} comment={comment} setComments={setComments} setId={setId} comments={comments} id={id} />
           ))}
         </div>
       </section>

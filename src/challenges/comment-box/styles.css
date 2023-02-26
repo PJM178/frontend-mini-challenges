@@ -24,3 +24,27 @@
   /* padding: 5px; */
   margin-left: 3rem;
 }
+
+.comment-box-form {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.comment-box-input {
+  margin: 5px;
+  margin-left: 0;
+  margin-bottom: 0;
+}
+
+.comment-box-textarea {
+  margin: 5px;
+  margin-left: 0;
+  margin-bottom: 0;
+}
+
+.comment-box-button {
+  margin: 5px;
+  margin-left: 0;
+  margin-bottom: 0;
+}
