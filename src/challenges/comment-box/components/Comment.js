@@ -7,14 +7,16 @@ const Comment = ({ comment, setId, id, setComments, comments }) => {
 
   const handleNewComment = (newComment) => {
     const updateComments = (comments) => {
-      if (comments.id !== comment.id) {
-        if (comments.children.length > 0) {
-          comments.children = comments.children.map((child) => updateComments(child));
+      if (comments !== undefined) {
+        if (comments.id !== comment.id) {
+          if (comments.children.length > 0) {
+            comments.children = comments.children.map((child) => updateComments(child));
+          }
+          return comments;
         }
-        return comments;
-      }
-      if (comments.id === comment.id) {
-        return { ...comments, children: [ ...comments.children, newComment ] };
+        if (comments.id === comment.id) {
+          return { ...comments, children: [ ...comments.children, newComment ] };
+        }
       }
     };
     setComments([updateComments(comments[0])]);
