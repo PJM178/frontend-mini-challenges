@@ -4,6 +4,7 @@ import HomePage from './components/HomePage';
 import CommentBox from './challenges/comment-box/CommentBox';
 import StarRating from './challenges/star-rating/StarRating';
 import TodoList from './challenges/todo-list/TodoList';
+import RippleButton from './challenges/ripple-button/RippleButton';
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Route path='/star-rating' element={<StarRating />} />
       <Route path='/comment-box' element={<CommentBox />} />
       <Route path='/todo-list' element={<TodoList />} />
+      <Route path='/ripple-button' element={<RippleButton />} />
     </Routes>
   );
 };

@@ -1,0 +1,21 @@
+.ripple-button-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ripple-button {
+  padding: 2rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  border-radius: 5px;
+}
+
+.ripple-button:hover {
+  /* background-color: rgba(0, 0, 0, 0.2); */
+  cursor: pointer;
+}
+
+.ripple-button-container {
+  padding: 1rem;
+}
