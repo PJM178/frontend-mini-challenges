@@ -19,3 +19,12 @@
 .ripple-button-container {
   padding: 1rem;
 }
+
+#mouse-trail {
+  display: none;
+  background-color: black;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  pointer-events: none;
+}
