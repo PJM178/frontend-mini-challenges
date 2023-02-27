@@ -24,6 +24,7 @@ const Comment = ({ comment, setId, id, setComments, comments }) => {
     setOpenForm(!openForm);
   };
 
+  // This is working but leaves undefined in child comments
   const handleDeleteComment = (comment) => {
     console.log(comment);
     const updateComments = (comments) => {
