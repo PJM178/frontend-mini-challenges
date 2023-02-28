@@ -1,21 +1,27 @@
 import { useState } from 'react';
 
-const Form = ({ handleNewComment, id }) => {
+const Form = ({ handleNewComment, id, setNotification }) => {
   const [username, setUsername] = useState('');
   const [body, setBody] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newComment = {
-      username: username,
-      body: body,
-      id: id,
-      children: [],
-    };
-    handleNewComment(newComment);
-    setUsername('');
-    setBody('');
-
+    if (body === '' || username === '') {
+      setNotification(true);
+      setTimeout(() => {
+        setNotification(false);
+      }, 3000);
+    } else {
+      const newComment = {
+        username: username,
+        body: body,
+        id: id,
+        children: [],
+      };
+      handleNewComment(newComment);
+      setUsername('');
+      setBody('');
+    }
   };
 
   return (

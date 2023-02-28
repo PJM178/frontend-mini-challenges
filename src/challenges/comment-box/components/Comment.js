@@ -4,6 +4,9 @@ import Form from './Form';
 
 const Comment = ({ comment, setId, id, setComments, comments }) => {
   const [openForm, setOpenForm] = useState(false);
+  const [notification, setNotification] = useState(false);
+  const [editField, setEditField] = useState('');
+  const [showEditField, setShowEditField] = useState(false);
 
   const handleNewComment = (newComment) => {
     const updateComments = (comments) => {
@@ -42,6 +45,12 @@ const Comment = ({ comment, setId, id, setComments, comments }) => {
     setComments([updateComments(comments[0])]);
   };
 
+  const handleSubmitEditComment = (e) => {
+    e.preventDefault();
+    setShowEditField(!showEditField);
+    return comment.body = editField;
+  };
+
   const nestedComments = (comment.children || []).map(comment => {
     return comment !== undefined && <Comment key={comment.id} comment={comment} setComments={setComments} setId={setId} comments={comments} id={id} type='child' />;
   });
@@ -50,12 +59,14 @@ const Comment = ({ comment, setId, id, setComments, comments }) => {
     <>
       <div className="comment-content-main">
         <div style={{ fontWeight: 'bold' }}>{comment.username}</div>
-        <div>{comment.body}</div>
+        {showEditField ? <form onSubmit={handleSubmitEditComment}><input onChange={(e) => setEditField(e.target.value)} value={editField} /></form> : <div>{comment.body}</div>}
         <div>
           <button onClick={() => setOpenForm(!openForm)}>Reply</button>
+          <button style={{ marginLeft: '5px' }} onClick={() => (setShowEditField(!showEditField), setEditField(comment.body))}>Edit</button>
           <button style={{ marginLeft: '5px' }} onClick={() => handleDeleteComment(comment)}>Delete</button>
         </div>
-        {openForm && <Form handleNewComment={handleNewComment} id={id} />}
+        {notification && <div style={{ color: 'red' }}>Please input username and comment</div>}
+        {openForm && <Form handleNewComment={handleNewComment} setNotification={setNotification} id={id} />}
       </div>
       {comment.children.length > 0 && <div className='comment-content-mains'>
         {nestedComments}
