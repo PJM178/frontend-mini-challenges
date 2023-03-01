@@ -9,7 +9,7 @@ const ControlButtons = ({ setProgressBarWidth, progressBarWidth }) => {
     if (progressBarWidth < 100) {
       if (intervalGoing) {
         setTimer(setInterval(() => {
-          setProgressBarWidth(progressBarWidth + 1/20);
+          setProgressBarWidth(progressBarWidth + 1/10);
         }, 1));
       }
     } else {
