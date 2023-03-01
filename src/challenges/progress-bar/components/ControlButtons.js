@@ -1,19 +1,22 @@
 /* eslint-disable no-unused-vars */
 import { useState, useEffect } from 'react';
 
-const ControlButtons = () => {
+const ControlButtons = ({ setProgressBarWidth, progressBarWidth }) => {
   const [intervalGoing, setIntervalGoing] = useState(false);
-  const [incrementWidth, setIncrementWidth] = useState(0);
   const [timer, setTimer] = useState(null);
-  console.log(incrementWidth);
+  console.log(progressBarWidth);
   useEffect(() => {
-    if (intervalGoing) {
-      setTimer(setInterval(() => {
-        setIncrementWidth(incrementWidth + 1);
-      }, 1000));
+    if (progressBarWidth < 100) {
+      if (intervalGoing) {
+        setTimer(setInterval(() => {
+          setProgressBarWidth(progressBarWidth + 1/20);
+        }, 1));
+      }
+    } else {
+      setProgressBarWidth(Math.floor(progressBarWidth));
     }
     return () => clearInterval(timer);
-  }, [incrementWidth, intervalGoing]);
+  }, [progressBarWidth, intervalGoing]);
 
   const handleStop = () => {
     setIntervalGoing(false);
@@ -21,7 +24,7 @@ const ControlButtons = () => {
   };
 
   const handleReset = () => {
-    setIncrementWidth(0);
+    setProgressBarWidth(0);
     clearInterval(timer);
   };
 

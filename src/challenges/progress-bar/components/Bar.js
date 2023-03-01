@@ -1,7 +1,7 @@
-const Bar = () => {
+const Bar = ({ progressBarWidth }) => {
   return (
     <div className="progress-bar-container">
-      <div className="progress-bar" style={{ width: '50%' }}></div>
+      <div className="progress-bar" style={{ width: `${progressBarWidth}%` }}></div>
     </div>
   );
 };
